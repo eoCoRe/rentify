@@ -34,7 +34,7 @@
   </pre>
   <li>Navegue até o diretório do projeto:</li>
   <pre>
-    cd nome-do-repositorio
+    cd rentify
   </pre>
   <li>Abra o arquivo <code>index.html</code> em um navegador web.</li>
 </ol>
