@@ -30,7 +30,7 @@
 <ol>
   <li>Clone este repositório em sua máquina local:</li>
   <pre>
-    git clone https://github.com/seu-usuario/nome-do-repositorio.git
+    git clone https://github.com/Douglas-cpr/rentify.git
   </pre>
   <li>Navegue até o diretório do projeto:</li>
   <pre>
