@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container__logo {
+  width: 100px;
+}
+
+.container__logo img {
+  width: 100%;
+}
+
+.home {
+  background-color: var(--background-color);
+}
