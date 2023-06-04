@@ -4,8 +4,9 @@ class Nav extends HTMLElement {
     this.innerHTML = `
     <style>
       .side-menu {
+        display: absolute;
         border-left: 1px solid var(--color-border);
-        height: 90%;
+        height: 100%;
         width: 12.5vw;
         background-color: var(--side-menu-background);
       }
@@ -42,7 +43,7 @@ class Nav extends HTMLElement {
       }
     </style>
 
-    <nav class="side-menu">
+    <aside class="side-menu">
       <ul class="side-menu__actions">
         <li class="side-menu__action">
           <a href="../pages/home.html">
@@ -69,7 +70,7 @@ class Nav extends HTMLElement {
           </a>
         </li>
       </ul>
-    </nav>
+    </aside>
     
     `
   }
