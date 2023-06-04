@@ -10,6 +10,7 @@ class Header extends HTMLElement {
         background-color: var(--color-background);
         width: 100%;
         padding: 0.5rem 2rem;
+        height: 10%;
       }
       
       .header__search {
