@@ -4,9 +4,9 @@ class Nav extends HTMLElement {
     this.innerHTML = `
     <style>
       .side-menu {
-        display: absolute;
+        top: 10%;
         border-left: 1px solid var(--color-border);
-        height: 100%;
+        height: 100vh;
         width: 12.5vw;
         background-color: var(--side-menu-background);
       }
