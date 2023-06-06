@@ -1,2 +1,2 @@
-import './components/header.js'
-import './components/side-bar.js'
+import './components/header.js';
+import './components/side-bar.js';
