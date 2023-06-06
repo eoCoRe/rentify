@@ -1,3 +1,5 @@
+import { setHeaderFilter } from '../filter.js';
+
 class Header extends HTMLElement {
   constructor() { super() }
   connectedCallback() {
@@ -59,11 +61,13 @@ class Header extends HTMLElement {
         </button>
       </div>
     </header>
-    
     `
+    const searchInput = this.querySelector('.search__input');
+    searchInput.addEventListener('input', setHeaderFilter);
+
   }
 }
 
 customElements.define('header-component', Header);
 
-export default Header;
+export default Header
