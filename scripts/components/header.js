@@ -1,7 +1,9 @@
-import { setHeaderFilter } from '../filter.js';
+import { setHeaderFilter } from '../filter.js'
 
 class Header extends HTMLElement {
-  constructor() { super() }
+  constructor() {
+    super()
+  }
   connectedCallback() {
     this.innerHTML = `
     <style>
@@ -39,8 +41,18 @@ class Header extends HTMLElement {
       }
       
       .header__logo {
-      cursor: pointer; 
-      ;}
+        cursor: pointer; 
+      }
+
+
+      .btn-notification.active, .open {
+        text-align: center;
+      }
+
+      .header .header__actions .open {
+        position: absolute;
+        text-align: center;
+      }
     </style>
 
     <header class="header">
@@ -53,21 +65,33 @@ class Header extends HTMLElement {
         <button class="btn__icon">
           <img src="../assets/icons/question.svg"/>
         </button>
-        <button class="btn__icon">
+        <button class="btn__icon btn-notification active">
           <img src="../assets/icons/notification.svg"/>
         </button>
         <button class="btn__icon">
           <img src="../assets/imgs/profile-picture.png"/>
         </button>
+        <div class="open">aberto</div>
       </div>
     </header>
     `
-    const searchInput = this.querySelector('.search__input');
-    searchInput.addEventListener('input', setHeaderFilter);
 
+    const notification = this.querySelector('.btn-notification')
+
+    notification.addEventListener('click', () => {
+      toggleBtnNotification(notification)
+    })
+
+    const searchInput = this.querySelector('.search__input')
+    searchInput.addEventListener('input', setHeaderFilter)
   }
 }
 
-customElements.define('header-component', Header);
+function toggleBtnNotification(element) {
+  console.log('teste')
+  element.classList.toggle('active')
+}
+
+customElements.define('header-component', Header)
 
 export default Header
