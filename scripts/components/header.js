@@ -44,14 +44,38 @@ class Header extends HTMLElement {
         cursor: pointer; 
       }
 
-
-      .btn-notification.active, .open {
-        text-align: center;
+      .header .header__actions {
+        position: relative
+      }
+    
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+    
+      .dropdown__content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        border-radius: 1rem 0 1rem 1rem;
+        min-width: 200px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+        z-index: 1;
+        padding: 2rem;
+        top: 100%;
+      }
+    
+      .dropdown.open .dropdown__content {
+        right: 40px;
+        margin-top: 2.5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.2rem;
       }
 
-      .header .header__actions .open {
-        position: absolute;
-        text-align: center;
+      .dropdown.open .btn-notification img {
+        filter: invert(55%) sepia(55%) saturate(2800%) hue-rotate(346deg) brightness(104%) contrast(97%);
       }
     </style>
 
@@ -65,32 +89,35 @@ class Header extends HTMLElement {
         <button class="btn__icon">
           <img src="../assets/icons/question.svg"/>
         </button>
+        <div class="dropdown">
         <button class="btn__icon btn-notification active">
           <img src="../assets/icons/notification.svg"/>
         </button>
+        <div class="dropdown__content">
+          <img src="../assets/icons/edit.svg"/>
+          Sem notificações
+        </div>
+      </div>
         <button class="btn__icon">
           <img src="../assets/imgs/profile-picture.png"/>
         </button>
-        <div class="open">aberto</div>
       </div>
     </header>
     `
 
-    const notification = this.querySelector('.btn-notification')
-
-    notification.addEventListener('click', () => {
-      toggleBtnNotification(notification)
-    })
+    const notificationButton = this.querySelector('.btn-notification');
+    const dropdown = this.querySelector('.dropdown');
+  
+    notificationButton.addEventListener('click', () => {
+      dropdown.classList.toggle('open');
+    });
+  
 
     const searchInput = this.querySelector('.search__input')
     searchInput.addEventListener('input', setHeaderFilter)
   }
 }
 
-function toggleBtnNotification(element) {
-  console.log('teste')
-  element.classList.toggle('active')
-}
 
 customElements.define('header-component', Header)
 
