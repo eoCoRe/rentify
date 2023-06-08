@@ -1,260 +1,252 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  body {
-    background-color: var(--bg-color);
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--color-background);
-    width: 100%;
-    padding: 0.5rem 2rem;
-  }
-  
-  .header__search {
-    width: 60%;
-    display: flex;
-    align-items: center;
-    background-color: #fdfdff;
-    padding: 0.375rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--color-border);
-  }
-  
-  .search__input {
-    flex: 1;
-    border: none;
-    background: none;
-    outline: none;
-    padding-left: 0.625rem;
-    font-size: 0.875rem;
-  }
-  
-  .header__search:focus-within {
-    box-shadow: 0 0 0 2px var(--color-accent);
-  }
-  
-  .search__icon {
-    width: 1rem;
-    height: 1rem;
-    margin-right: 0.375rem;
-  }
-  
-  .btn__icon {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.95rem;
-    background-color: var(--color-background);
-    text-align: center;
-    font-weight: bold;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
-  }
-  
-  .btn__icon:hover {
-    background-color: var(--color-accent);
-  }
-  
-  
-  
-  
-  body{
-    background-color: #F3F5F8;
-  }
-  
-  .form{
-    width: 1000px;
-    margin: auto;
-    padding-top: 200px;
-  }
-  
-  .card{
-    box-shadow: 1px 1px 5px #ccc;
-    background-color: white;
-    padding: 30px;
-    border-radius: 5px;
-  }
-  
-  .card-top{
-    position: relative;
-    text-align: center;
-  }
-  
-  .img-login{
-    width: 70px;
-    position: relative;
-    left: -250px; 
-    top: 70px; 
-  }
-  
-  .titulo{
-    font-size: 50px;
-    font-family: 'Roboto';
-    font-style: normal;
-    color: #42505C;
-  }
-  
-  .card-centro {
-    width: 300px;
-    margin: auto;
-    background-color:transparent;
-    padding: 30px;
-    border-radius: 5px;
-  }
-  
-  .card-centro h2{
-    margin-top: 0px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 28px;
-    font-family: 'Roboto';
-    font-style: normal;
-    color: #333333;
-    letter-spacing: 0.25px;
-    text-align: left;
-    
-    
-  }
-  
-  
-  
-  
-  .card-top p{
-    padding-top: 3px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 28px;
-    text-align: center;
-    letter-spacing: 0.25px;
-    color: #333333;
-    opacity: 0.3;
-  }
-  
-  .line{
-    position: relative;
-    bottom: -10px;
-    left: 25%; 
-    width: 50%; 
-    height: 1px;
-    background-image: linear-gradient(to right, #000000 50%, transparent 0%);
-    background-position: bottom;
-    background-size: 10px 1px; 
-    background-repeat: repeat-x;
-    opacity: 0.2;
-    margin-top: 10px;
-  }
-  .line2{
-    position: relative;
-    bottom: -20px;
-    left: 25%; 
-    width: 50%; 
-    height: 1px;
-    background-image: linear-gradient(to right, #000000 50%, transparent 0%);
-    background-position: bottom;
-    background-size: 10px 1px; 
-    background-repeat: repeat-x;
-    opacity: 0.2;
-    margin-top: 10px;}
-  
-  .campo-email label {
-    display: block;
-    font-family: 'Poppins';
-    font-style: normal;
-    color: #1A1A1A;
-    margin-bottom: 0px;
-    padding-right:  165px;
-    font-weight: 400;
-    margin-top: 40px;
-  }
-  
-  .campo-email input {
-    border: none;
-    border-bottom: 2px solid #CCCCCC;
-    background-color: transparent;
-    padding: 5px;
-    width: 270px; 
-    height: 20px; 
-    font-family: 'Roboto';
-    font-style: normal;
-    color: #333333;
-    flex: none;
-    order: 2;
-    flex-grow: 1;
-  
-  }
-  
-  
-  .input-container {
-    position: relative;
-  }
-  
-  .icone-container {
-    position: relative;
-    display: inline-block;
-    
-  }
-  
-  .icone {
-    position: absolute;
-    right: 10px; 
-    width:13px;
-    margin-top:-13px;
-    opacity: 0.2;
-  }
-  
-  .line-between {
-    position: absolute;
-    
-    left: 25%;
-    width: 50%;
-    height: 0px;
-    background-image: linear-gradient(to right, #000000 50%, transparent 0%);
-    background-position: bottom;
-    background-size: 10px 1px;
-    background-repeat: repeat-x;
-    opacity: 0.2;
-    margin-top: 10px;
-  }
-  
-  .campo-confirmar {
-    text-align: center;
-    margin-top: 40px;
-  }
-  
-  .campo-confirmar button {
-    padding: 8px 16px;
-    
-    background: #F97316;
-    color: #ffffff;
-    font-family: 'Roboto';
-    font-weight: 700;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .campo-voltar {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .campo-voltar button {
-    padding: 8px 16px;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #F97316;
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-background);
+  width: 100%;
+  padding: 0.5rem 2rem;
+}
+
+.header__search {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  background-color: #fdfdff;
+  padding: 0.375rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
+}
+
+.search__input {
+  flex: 1;
+  border: none;
+  background: none;
+  outline: none;
+  padding-left: 0.625rem;
+  font-size: 0.875rem;
+}
+
+.header__search:focus-within {
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.search__icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.375rem;
+}
+
+.btn__icon {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.95rem;
+  background-color: var(--color-background);
+  text-align: center;
+  font-weight: bold;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+}
+
+.btn__icon:hover {
+  background-color: var(--color-accent);
+}
+
+.recuperar-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 1000px;
+}
+
+.card {
+  box-shadow: 1px 1px 5px #ccc;
+  background-color: white;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.card-top {
+  position: relative;
+  text-align: center;
+}
+
+.img-login {
+  width: 70px;
+  position: relative;
+  left: -250px;
+  top: 70px;
+}
+
+.titulo {
+  font-size: 50px;
+  font-family: 'Roboto';
+  font-style: normal;
+  color: #42505c;
+}
+
+.card-centro {
+  width: 300px;
+  margin: auto;
+  background-color: transparent;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.card-centro h2 {
+  margin-top: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  font-family: 'Roboto';
+  font-style: normal;
+  color: #333333;
+  letter-spacing: 0.25px;
+  text-align: left;
+}
+
+.card-top p {
+  padding-top: 3px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 28px;
+  text-align: center;
+  letter-spacing: 0.25px;
+  color: #333333;
+  opacity: 0.3;
+}
+
+.line {
+  position: relative;
+  bottom: -10px;
+  left: 25%;
+  width: 50%;
+  height: 1px;
+  background-image: linear-gradient(to right, #000000 50%, transparent 0%);
+  background-position: bottom;
+  background-size: 10px 1px;
+  background-repeat: repeat-x;
+  opacity: 0.2;
+  margin-top: 10px;
+}
+.line2 {
+  position: relative;
+  bottom: -20px;
+  left: 25%;
+  width: 50%;
+  height: 1px;
+  background-image: linear-gradient(to right, #000000 50%, transparent 0%);
+  background-position: bottom;
+  background-size: 10px 1px;
+  background-repeat: repeat-x;
+  opacity: 0.2;
+  margin-top: 10px;
+}
+
+.campo-email label {
+  display: block;
+  font-family: 'Poppins';
+  font-style: normal;
+  color: #1a1a1a;
+  margin-bottom: 0px;
+  padding-right: 165px;
+  font-weight: 400;
+  margin-top: 40px;
+}
+
+.campo-email input {
+  border: none;
+  border-bottom: 2px solid #cccccc;
+  background-color: transparent;
+  padding: 5px;
+  width: 270px;
+  height: 20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  color: #333333;
+  flex: none;
+  order: 2;
+  flex-grow: 1;
+}
+
+.input-container {
+  position: relative;
+}
+
+.icone-container {
+  position: relative;
+  display: inline-block;
+}
+
+.icone {
+  position: absolute;
+  right: 10px;
+  width: 13px;
+  margin-top: -13px;
+  opacity: 0.2;
+}
+
+.line-between {
+  position: absolute;
+
+  left: 25%;
+  width: 50%;
+  height: 0px;
+  background-image: linear-gradient(to right, #000000 50%, transparent 0%);
+  background-position: bottom;
+  background-size: 10px 1px;
+  background-repeat: repeat-x;
+  opacity: 0.2;
+  margin-top: 10px;
+}
+
+.campo-confirmar {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.campo-confirmar button {
+  padding: 8px 16px;
+
+  background: #f97316;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.campo-voltar {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.campo-voltar button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #f97316;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}

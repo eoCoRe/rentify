@@ -1,7 +1,9 @@
-import { setHeaderFilter } from '../filter.js';
+import { setHeaderFilter } from '../filter.js'
 
 class Header extends HTMLElement {
-  constructor() { super() }
+  constructor() {
+    super()
+  }
   connectedCallback() {
     this.innerHTML = `
     <style>
@@ -39,8 +41,42 @@ class Header extends HTMLElement {
       }
       
       .header__logo {
-      cursor: pointer; 
-      ;}
+        cursor: pointer; 
+      }
+
+      .header .header__actions {
+        position: relative
+      }
+    
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+    
+      .dropdown__content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        border-radius: 1rem 0 1rem 1rem;
+        min-width: 200px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+        z-index: 1;
+        padding: 2rem;
+        top: 100%;
+      }
+    
+      .dropdown.open .dropdown__content {
+        right: 40px;
+        margin-top: 2.5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.2rem;
+      }
+
+      .dropdown.open .btn-notification img {
+        filter: invert(55%) sepia(55%) saturate(2800%) hue-rotate(346deg) brightness(104%) contrast(97%);
+      }
     </style>
 
     <header class="header">
@@ -53,21 +89,36 @@ class Header extends HTMLElement {
         <button class="btn__icon">
           <img src="../assets/icons/question.svg"/>
         </button>
-        <button class="btn__icon">
+        <div class="dropdown">
+        <button class="btn__icon btn-notification active">
           <img src="../assets/icons/notification.svg"/>
         </button>
+        <div class="dropdown__content">
+          <img src="../assets/icons/edit.svg"/>
+          Sem notificações
+        </div>
+      </div>
         <button class="btn__icon">
           <img src="../assets/imgs/profile-picture.png"/>
         </button>
       </div>
     </header>
     `
-    const searchInput = this.querySelector('.search__input');
-    searchInput.addEventListener('input', setHeaderFilter);
 
+    const notificationButton = this.querySelector('.btn-notification');
+    const dropdown = this.querySelector('.dropdown');
+  
+    notificationButton.addEventListener('click', () => {
+      dropdown.classList.toggle('open');
+    });
+  
+
+    const searchInput = this.querySelector('.search__input')
+    searchInput.addEventListener('input', setHeaderFilter)
   }
 }
 
-customElements.define('header-component', Header);
+
+customElements.define('header-component', Header)
 
 export default Header
