@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/variables.css">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/anuncio.css">
+  <script type="module" src="../scripts/index.js"></script>
+  <script type="module" src="../scripts/anuncio.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <title>Rentify - Meus anuncios</title>
+  
+</head>
+<body>
+
+  <header-component>
+    <header class="header">
+      <img class="header__logo" src="../assets/imgs/logo.png">
+      <div class="header__search">
+        <input class="search__input" type="text">
+        <img class="search__icon" src="../assets/icons/search.svg">
+      </div>
+      <div class="header__actions">
+        <button class="btn__icon">
+          <img src="../assets/icons/question.svg">
+        </button>
+        <button class="btn__icon">
+          <img src="../assets/icons/notification.svg">
+        </button>
+        <button class="btn__icon">
+          <img src="../assets/imgs/profile-picture.png">
+        </button>
+      </div>
+    </header>
+  </header-component>
+  
+  <main class="home">
+    <div class="retangulo">
+      <div class="imoveis ">
+        <p>Foto dos imoveis</p>
+      </div>
+      <div class="caixa-img">
+        <label class="picture" tabindex="0">
+          <input type="file" accept="image/*" class="picture__input" multiple onchange="exibirNomesImagens(event)"/>
+          <span class="picture__image">
+            <img src="../assets/icons/add-img.svg" alt="" style="width: 30px; height: auto;">
+          </span>
+        </label>
+        <div id="nomes-imagens" class="nomes-imagens" style="padding-left: 70px;"></div> <!-- Elemento para exibir os nomes das imagens -->
+      </div>
+      
+      
+      
+      
+      <a href="../pages/anuncio.html">
+        <button class="adicionar-imovel-btn">
+          Adicionar Imóvel
+        </button>   
+      </a>
+      
+      
+      
+      <div class="topo">
+        <div class="voltar">
+          <a href="../pages/home.html">
+            <img src="../assets/icons/arrow-left-orange.svg">
+            Voltar
+          </a>
+          
+        </div>
+        <p>Meus anúncios-adicionar</p>
+      </div>
+      <hr >
+      <div class="formulario">
+        <label for="cidade">Cidade</label>   
+        <div class="caixas">
+          <input type="text" id="cidade" name="cidade" >
+        </div>
+      </div>
+      <div class="formulario">
+        <label for="bairro">Bairro</label>   
+        <div class="caixas">
+          <input type="text" id="bairro" name="bairro"  >
+        </div>
+      </div>
+      <div class="formulario">
+        <label for="valor mensal">Valor mensal($)</label>   
+        <div class="caixas">
+          <input type="text" id="valor mensal" name="valor mensal"  >
+        </div>
+        
+      </div>
+
+      <div class="formulario-centro">
+        <label for="cep">Cep</label>   
+        <div class="caixas">
+          <input type="text" id="cep" name="cep" >
+        </div>
+      </div>
+      <div class="formulario-centro">
+        <label for="capacidade de pessoas">  Capacidade de pessoas</label>   
+        <div class="caixas">
+          <input type="text" id="capacidade de pessoas" name="capacidade de pessoas"  >
+        </div>
+      </div>
+      <div class="formulario-centro">
+        <label for="comodos">Cômodos</label>   
+        <div class="caixas">
+          <input type="text" id="comodos" name="comodos"  >
+         
+          
+          
+        </div>
+        
+      </div>
+    
+        
+      <div class="formulario-direita">
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" name="descricao"></textarea>
+      </div>
+
+     
+      </div>
+
+      </div>
+      
+      
+       
+
+
+    <side-bar-component>
+      <aside class="side-menu">
+        <ul class="side-menu__actions">
+          <li class="side-menu__action">
+            <a href="../pages/home.html">
+              <img src="../assets/icons/home.svg">
+              Página inicial
+            </a>
+          </li>
+          <li class="side-menu__action">
+            <a href="../pages/favoritos.html">
+              <img src="../assets/icons/heart.svg">
+              Favoritos
+            </a>
+          </li>
+          <li class="side-menu__action active">
+            <a href="../pages/anuncios.html">
+              <img src="../assets/icons/folder.svg">
+              Meus anúncios
+            </a>
+          </li>
+          <li class="side-menu__action side-menu__action-exit">
+            <a href="../pages/entrar.html">
+              Sair
+              <img src="../assets/icons/arrow-left.svg">
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </side-bar-component>
+  </main>
+  
+  <script type="module" src="../scripts/home.js"></script>
+  <script>
+    function exibirNomesImagens(event) {
+      var input = event.target;
+      var nomesImagensDiv = document.getElementById('nomes-imagens');
+      nomesImagensDiv.textContent = ""; // Limpa o conteúdo atual
+    
+      var nomesImagens = [];
+      for (var i = 0; i < input.files.length; i++) {
+        var nomeImagem = input.files[i].name;
+        nomesImagens.push(nomeImagem);
+      }
+    
+      nomesImagensDiv.textContent = nomesImagens.join(", ");
+    }
+    </script>
+  
+  
+</body>
+</html>
