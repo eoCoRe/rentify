@@ -1,0 +1,102 @@
+.imovel {
+  display: flex;
+  min-height: 100vh;
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  color: var(--main);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.card-imovel {
+  color: var(--color-primary);
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--card-background);
+  width: 90%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  padding: 2.25rem 2rem;
+  border-radius: 0.5rem;
+  position: relative;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  font-weight: 500;
+  transition: all ease-out 0.2s;
+}
+
+.card-content {
+  padding: 2rem;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-imovel .btn-primary {
+  background-color: var(--main);
+  color: #fff;
+  width: 140px;
+  height: 35px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.content-data {
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  height: 60%;
+}
+
+.content-title {
+  font-weight: 400;
+}
+
+.content-owner {
+  color: var(--main);
+}
+
+.content-info {
+  display: flex;
+  align-items: center;
+}
+
+.card-content .btn-message {
+  align-self: center;
+  height: 45px;
+  width: 150px;
+}
+
+.card-carousel {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+}
