@@ -5,6 +5,10 @@ class Header extends HTMLElement {
     super();
   }
 
+  searchEnabled() {
+    return this.getAttribute('search') === 'true'
+  }
+
   connectedCallback() {
     this.render();
     this.bindEventListeners();
@@ -108,10 +112,9 @@ class Header extends HTMLElement {
 
       <header class="header">
         <img class="header__logo" src="../assets/imgs/logo.png">
-        <div class="header__search">
-          <input class="search__input" type="text"/>
-          <img class="search__icon" src="../assets/icons/search.svg"/>
-        </div>
+        ${
+          this.searchEnabled() ? this.renderSearchInput() : ''
+        }
         <div class="header__actions">
           <button class="btn__icon">
             <img src="../assets/icons/question.svg"/>
@@ -138,6 +141,14 @@ class Header extends HTMLElement {
         </div>
       </header>
     `;
+  }
+
+  renderSearchInput() {
+    return `
+    <div class="header__search">
+      <input class="search__input" type="text"/>
+      <img class="search__icon" src="../assets/icons/search.svg"/>
+    </div>`
   }
 
   bindEventListeners() {
