@@ -152,12 +152,27 @@ class Header extends HTMLElement {
   }
 
   bindEventListeners() {
-    const notificationButton = this.getNotificationButton();
-    const profileButton = this.getProfileButton();
+    this.bindSearchInput();
+    this.bindNotificationButton();
+    this.bindProfileButton();
+  }
+
+  bindSearchInput() {
     const searchInput = this.getSearchInput();
-    notificationButton.addEventListener('click', this.handleNotificationButtonClick.bind(this));
-    profileButton.addEventListener('click', this.handleProfileButtonClick.bind(this));
+    if (!searchInput) return;
     searchInput.addEventListener('input', setHeaderFilter);
+  }
+
+  bindNotificationButton() {
+    const notificationButton = this.getNotificationButton();
+    if (!notificationButton) return;
+    notificationButton.addEventListener('click', this.handleNotificationButtonClick.bind(this));
+  }
+
+  bindProfileButton() {
+    const profileButton = this.getProfileButton();
+    if (!profileButton) return;
+    profileButton.addEventListener('click', this.handleProfileButtonClick.bind(this));
   }
 
   getNotificationButton() {
