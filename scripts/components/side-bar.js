@@ -1,5 +1,7 @@
 class Nav extends HTMLElement {
-  constructor() { super() }
+  constructor() {
+    super()
+  }
   connectedCallback() {
     this.innerHTML = `
     <style>
@@ -12,6 +14,7 @@ class Nav extends HTMLElement {
       }
       
       .side-menu__actions {
+        padding-top: 1rem;
         height: 90%;
         display: flex;
         flex-direction: column;
@@ -73,13 +76,14 @@ class Nav extends HTMLElement {
       </ul>
     </aside>
     `
-    const sideMenuActions = this.querySelectorAll('.side-menu__action a');
-    sideMenuActions.forEach(link => {
-      if (link.href === window.location.href) link.parentElement.classList.add('active');
-    });
+    const sideMenuActions = this.querySelectorAll('.side-menu__action a')
+    sideMenuActions.forEach((link) => {
+      if (link.href === window.location.href)
+        link.parentElement.classList.add('active')
+    })
   }
 }
 
-customElements.define('side-bar-component', Nav);
+customElements.define('side-bar-component', Nav)
 
-export default Nav;
+export default Nav
