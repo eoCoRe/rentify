@@ -62,7 +62,7 @@ class Nav extends HTMLElement {
           </a>
         </li>
         <li class="side-menu__action">
-          <a href="../pages/anuncios.html">
+          <a href="../pages/anuncio-add.html">
             <img src="../assets/icons/folder.svg"/>
             Meus anúncios
           </a>
