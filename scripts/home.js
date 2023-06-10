@@ -1,8 +1,8 @@
 import { getHeaderFilter } from './filter.js';
 
-let previousFilterText = '';
+let _previousFilterText = '';
 
-const advertisements = [
+const _advertisements = [
   {
     imgRoute: '../assets/imgs/house-1.png',
     title: 'Jardins da Cidade, na cidade de Nova Esperança',
@@ -35,9 +35,37 @@ const advertisements = [
   }
 ];
 
+setInterval(() => {
+  buildAdvertisementsIfNeeded();
+}, 250);
+
+function buildAdvertisementsIfNeeded() {
+  const headerFilter = getHeaderFilter();
+  if (headerFilter === _previousFilterText) return;
+  updateAdvertisements(headerFilter);
+  _previousFilterText = headerFilter;
+}
+
+function updateAdvertisements(filter) {
+  const advertisementsContainer = document.querySelector('.cards');
+  const filteredAdvertisements = filterAdvertisements(filter);
+  const contentHtml = filteredAdvertisements.map(createCardHtml).join('');
+  advertisementsContainer.innerHTML = contentHtml;
+  bindFavoriteIcons();
+}
+
+function bindFavoriteIcons() {
+  const favoriteIcons = document.querySelectorAll('.card__favorite');
+  favoriteIcons.forEach(icon => {
+    icon.addEventListener('click', () => {
+      toggleFavoriteState(icon);
+    });
+  });
+}
+
 function filterAdvertisements(filter) {
-  if (filter == null) return advertisements;
-  return advertisements.filter(advertisement =>
+  if (filter == null) return _advertisements;
+  return _advertisements.filter(advertisement =>
     advertisement.toString().includes(filter.toLowerCase())
   );
 }
@@ -59,35 +87,6 @@ function createCardHtml(ad) {
     </div>
   `;
 }
-
-function updateAdvertisements(filter) {
-  const advertisementsContainer = document.querySelector('.cards');
-  const filteredAdvertisements = filterAdvertisements(filter);
-
-  const contentHtml = filteredAdvertisements
-    .map(createCardHtml)
-    .join('');
-
-  advertisementsContainer.innerHTML = contentHtml;
-
-  const favoriteIcons = advertisementsContainer.querySelectorAll('.card__favorite');
-  favoriteIcons.forEach(icon => {
-    icon.addEventListener('click', () => {
-      toggleFavoriteState(icon);
-    });
-  });
-}
-
-function buildAdvertisementsIfNeeded() {
-  const headerFilter = getHeaderFilter();
-  if (headerFilter === previousFilterText) return;
-  updateAdvertisements(headerFilter);
-  previousFilterText = headerFilter;
-}
-
-setInterval(() => {
-  buildAdvertisementsIfNeeded();
-}, 500);
 
 function toggleFavoriteState(element) {
   element.classList.toggle('active');
