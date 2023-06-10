@@ -57,7 +57,8 @@ function updateAdvertisements(filter) {
 function bindFavoriteIcons() {
   const favoriteIcons = document.querySelectorAll('.card__favorite');
   favoriteIcons.forEach(icon => {
-    icon.addEventListener('click', () => {
+    icon.addEventListener('click', (e) => {
+      e.preventDefault();
       toggleFavoriteState(icon);
     });
   });
@@ -72,7 +73,7 @@ function filterAdvertisements(filter) {
 
 function createCardHtml(ad) {
   return `
-    <div class="card">
+    <a class="card" href="../pages/imovel.html">
       <img src="${ad.imgRoute}" />
       <div class="card__content">
         <h3 class="card__title">${ad.title}</h3>
@@ -84,7 +85,7 @@ function createCardHtml(ad) {
         <strong class="card__price">R$ ${ad.price}/mês</strong>
       </div>
       <img class="card__favorite" src="../assets/icons/heart.svg" />
-    </div>
+    </a>
   `;
 }
 
