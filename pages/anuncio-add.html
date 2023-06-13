@@ -21,7 +21,6 @@
   
 </head>
 <body>
-
   <header-component>
     <header class="header">
       <img class="header__logo" src="../assets/imgs/logo.png">
@@ -202,12 +201,9 @@
     for (var i = 0; i < input.files.length; i++) {
       var nomeImagem = input.files[i].name;
       nomesImagens.push(nomeImagem);
+      nomesImagensDiv.textContent = nomesImagens.join(", ");
     }
-  
-    nomesImagensDiv.textContent = nomesImagens.join(", ");
   }
     </script>
-  
-  
 </body>
 </html>
