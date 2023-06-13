@@ -10,10 +10,13 @@
   <link rel="stylesheet" href="../styles/variables.css">
   <link rel="stylesheet" href="../styles/global.css">
   <link rel="stylesheet" href="../styles/anuncio.css">
-  <script type="module" src="../scripts/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
   <script type="module" src="../scripts/anuncio.js"></script>
+  <script type="module" src="../scripts/index.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+   
   <title>Rentify - Meus anuncios</title>
   
 </head>
@@ -58,9 +61,9 @@
       
       
       <a href="../pages/anuncio.html">
-        <button class="adicionar-imovel-btn">
+        <button id="confirmar" class="adicionar-imovel-btn">
           Adicionar Imóvel
-        </button>   
+        </button>
       </a>
       
       
@@ -89,18 +92,20 @@
         </div>
       </div>
       <div class="formulario">
-        <label for="valor mensal">Valor mensal($)</label>   
+        <label for="valor mensal">Valor mensal</label>   
         <div class="caixas">
-          <input type="text" id="valor mensal" name="valor mensal"  >
+          <input type="text" id="valor mensal" name="valor mensal" oninput="formatarValor(this)" >
         </div>
         
       </div>
 
       <div class="formulario-centro">
-        <label for="cep">Cep</label>   
+        <label for="cep">Cep</label>
         <div class="caixas">
-          <input type="text" id="cep" name="cep" >
+          <input type="text" id="cep" name="cep">
+          <span id="cep-error" class="error-message" style="display: none;">CEP inválido ou campo vazio</span>
         </div>
+       
       </div>
       <div class="formulario-centro">
         <label for="capacidade de pessoas">  Capacidade de pessoas</label>   
@@ -166,19 +171,39 @@
     </side-bar-component>
   </main>
   
-  <script type="module" src="../scripts/home.js"></script>
+  
   <script>
+ function formatarValor(input) {
+  // Remove todos os caracteres que não sejam números, ponto ou vírgula
+  var valor = input.value.replace(/[^\d.,]/g, '');
+
+  // Substitui a vírgula pelo ponto (caso necessário)
+  
+
+  // Remove todos os pontos, exceto o último
+  valor = valor.replace(/\.(?=.*\.)/g, '');
+
+  // Remove os zeros à esquerda
+  valor = valor.replace(/^0+/, '');
+
+  // Formata o valor inserindo o símbolo "R$" e adicionando separadores de milhar
+  var valorFormatado = "R$ " + parseFloat(valor).toLocaleString('pt-BR');
+
+  // Atualiza o valor no campo de input
+  input.value = valorFormatado;
+}
+  function exibirNomesImagens(event) {
+    var input = event.target;
     var nomesImagensDiv = document.getElementById('nomes-imagens');
     nomesImagensDiv.textContent = ""; // Limpa o conteúdo atual
-    function exibirNomesImagens(event) {
-      var input = event.target;
-      var nomesImagens = [];
-      for (var i = 0; i < input.files.length; i++) {
-        var nomeImagem = input.files[i].name;
-        nomesImagens.push(nomeImagem);
-      }
-      nomesImagensDiv.textContent += nomesImagens.join(", ") + '  ';
+  
+    var nomesImagens = [];
+    for (var i = 0; i < input.files.length; i++) {
+      var nomeImagem = input.files[i].name;
+      nomesImagens.push(nomeImagem);
+      nomesImagensDiv.textContent = nomesImagens.join(", ");
     }
+  }
     </script>
 </body>
 </html>
