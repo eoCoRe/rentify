@@ -3,13 +3,13 @@
     font-family: "Josefin Sans", sans-serif;
 }
 body{
-    background-color: rgb(245, 245, 245);
+    background-color: #F5F5F5;
 }
 
 .corpo{
     border-radius: 5px;
-    width: 90%;
-    height: 90%;
+    width: 70%;
+    height: 70%;
     background-color: white;
     position: absolute;
     top: 50%;
