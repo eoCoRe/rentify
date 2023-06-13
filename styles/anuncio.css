@@ -246,7 +246,7 @@ font-weight: 400;
 }
 .caixa-img{
   position: absolute;
-  bottom: 16%;
+  bottom: 13%;
   left: 100px;
 
 }
@@ -299,6 +299,7 @@ font-weight: 400;
 .imoveis p{
   position:absolute;
   width: 100px;
-  bottom: 100px;
+  bottom: 50px;
   left: 40px;
+
 }
