@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,58 +8,60 @@
 </head>
 <body>
     <section class="corpo">
-    <div class="entrar">
-        <div class="pato">
-            <img src="../assets/imgs/logo-md.png">
-            <p>Rentify</p>
+        <div class="entrar">
+            <div class="pato">
+                <img src="../assets/imgs/logo-md.png">
+                <p>Rentify</p>
+            </div>
+            <div class="txt-entrar">
+                <h1>Entrar</h1>
+            </div>
         </div>
-        <div class="txt-entrar">
-            <h1>Entrar</h1>
-        </div>
-    </div>
     
-    <hr class="linha">
-    <div class="login">
-        <div class="input-regiao">
-            <p>Usuário</p>
-            <input type="text" placeholder="Nome do usuário">
-            <hr class="linha">
-        
-            <p>Senha</p>
-            <input type="password" placeholder="********">
-            <hr class="linha">
+        <hr class="linha">
+        <div class="login">
+            <div class="input-regiao">
+                <p>Usuário</p>
+                <input type="text" placeholder="Nome do usuário" id="usuario">
+                <img class="img-login" src="../assets/icons/icon.svg" alt="" />
+                <hr class="linha">
+                <p>Senha</p>
+                <input type="password" placeholder="********" id="senha">
+                <img class="img-login" src="../assets/icons/Vector.svg" alt="" />
+                <hr class="linha">
+            </div>
         </div>
-    </div>
-    <div class="confirmar">
-        <div class="lembrar">
-            <div class="lemcheck">
-                <input type="checkbox" class="check">
-                <p class="Lembrar-se">Lembrar-se</p>
-            </div>    
+        <div class="confirmar">
+            <div class="lembrar">
+                <div class="lemcheck">
+                    <input type="checkbox" class="check">
+                    <p class="Lembrar-se">Lembrar</p>
+                </div>    
+            </div>
+            <div class="registrar">
+                <a href="./home.html" id="entrarLink">
+                    <p>Entrar</p>
+                </a>
+            </div>
         </div>
-        <div class="registrar">
-            <a href="./home.html">
-                <p>Entrar</p>
+        <div id="esqsenha" class="esqsenha">
+            <a href="./recuperar.html">
+                <p>Esqueceu sua senha?</p>
             </a>
         </div>
-    </div>
-    <div id="esqsenha" class="esqsenha">
-        <a href="./recuperar.html">
-            <p>Esqueceu sua senha?</p>
-        </a>
-    </div>
-    <hr class="linha">
+        <hr class="linha">
         <div id="naotemconta" class="naotemconta">
-        <a href="#">
-            <p>Não tem uma conta?</p>
-        </a>
-    </div>
+            <a href="#">
+                <p>Não tem uma conta?</p>
+            </a>
+        </div>
         <div id="registrar" class="esqsenha">
-        <a href="registrar.html">
-            <p>Registrar-se</p>
-        </a>
-    </div>
+            <a href="registrar.html">
+                <p>Registrar-se</p>
+            </a>
+        </div>
+    </section>
 
-</section>
+    <script src="../scripts/entrar.js"></script>
 </body>
 </html>
