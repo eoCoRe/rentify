@@ -1,15 +1,27 @@
 const _advertisements = [
   {
     id: 1,
+    ImgFolder: '../assets/imgs/imovel/',
     imgRoute: '../assets/imgs/house-1.png',
     title: 'Jardins da Cidade, na cidade de Nova Esperança',
     description: '2 quartos e 2 banheiros, permitido animais de estimação',
+    fullDescription: 'O bairro Jardins da Cidade é um dos mais valorizados da cidade de Nova Esperança, oferecendo aos seus moradores uma infraestrutura completa e acessível. Você estará a poucos minutos de distância de escolas, hospitais, restaurantes, parques e diversas opções de comércio e lazer.',
     capacity: '4 pessoas',
+    
     price: '2.800,00',
     favorite: false,
     toString() {
-      return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase();
-    }
+      return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase()
+    },
+    currentFocusImg: 'imovel-01-01.jpg',
+    images: [
+      'imovel-01-01.jpg',
+      'imovel-01-02.jpg',
+      'imovel-01-03.jpg',
+      'imovel-01-04.jpg',
+      'imovel-01-05.jpg',
+      'imovel-01-06.jpg',
+    ],
   },
   {
     id: 2,
@@ -20,8 +32,8 @@ const _advertisements = [
     price: '1.200,00',
     favorite: false,
     toString() {
-      return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase();
-    }
+      return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase()
+    },
   },
   {
     id: 3,
@@ -32,18 +44,16 @@ const _advertisements = [
     price: '4.800,00',
     favorite: false,
     toString() {
-      return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase();
-    }
-  }
-];
+      return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase()
+    },
+  },
+]
 
-export let advertisements = Array.from(_advertisements);
+export let advertisements = Array.from(_advertisements)
 
 export function setFavorite(id, favoriteVal) {
-  const index = _advertisements.findIndex((ad) => ad.id == id);
-  const ad = _advertisements[index];
-  if (!ad) return;
-  ad.favorite = favoriteVal;
+  const index = _advertisements.findIndex((ad) => ad.id == id)
+  const ad = _advertisements[index]
+  if (!ad) return
+  ad.favorite = favoriteVal
 }
-
-
