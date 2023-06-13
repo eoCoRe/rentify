@@ -1,39 +1,8 @@
 import { getHeaderFilter } from './filter.js';
+import { advertisements, setFavorite } from './data.js';
 
 let _previousFilterText = '';
 
-const _advertisements = [
-  {
-    imgRoute: '../assets/imgs/house-1.png',
-    title: 'Jardins da Cidade, na cidade de Nova Esperança',
-    description: '2 quartos e 2 banheiros, permitido animais de estimação',
-    capacity: '4 pessoas',
-    price: '2.800,00',
-    toString() {
-      return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase();
-    }
-  },
-  {
-    imgRoute: '../assets/imgs/house-2.png',
-    title: 'Jardim das Flores, cidade de São Miguel',
-    description: '2 quartos e 1 banheiro, não permitido animais de estimação',
-    capacity: '2 pessoas',
-    price: '1.200,00',
-    toString() {
-      return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase();
-    }
-  },
-  {
-    imgRoute: '../assets/imgs/house-3.png',
-    title: 'Vila dos Pinheiros, cidade de Pinheiro',
-    description: '3 quartos e 2 banheiros, permitido animais de estimação',
-    capacity: '5 pessoas',
-    price: '4.800,00',
-    toString() {
-      return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase();
-    }
-  }
-];
 
 setInterval(() => {
   buildAdvertisementsIfNeeded();
@@ -65,8 +34,8 @@ function bindFavoriteIcons() {
 }
 
 function filterAdvertisements(filter) {
-  if (filter == null) return _advertisements;
-  return _advertisements.filter(advertisement =>
+  if (filter == null) return advertisements;
+  return advertisements.filter(advertisement =>
     advertisement.toString().includes(filter.toLowerCase())
   );
 }
@@ -84,11 +53,13 @@ function createCardHtml(ad) {
         <p>${ad.description}</p>
         <strong class="card__price">R$ ${ad.price}/mês</strong>
       </div>
-      <img class="card__favorite" src="../assets/icons/heart.svg" />
+      <img class="card__favorite" id="${ad.id}" src="../assets/icons/heart.svg" />
     </a>
   `;
 }
 
 function toggleFavoriteState(element) {
   element.classList.toggle('active');
+  var favoriteVal = element.classList.contains('active');
+  setFavorite(element.id, favoriteVal);
 }
