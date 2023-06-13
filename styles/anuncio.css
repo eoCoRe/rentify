@@ -127,8 +127,8 @@ body {
 .retangulo {
   justify-content: space-between;
   position: absolute;
-  width: 1400.39px;
-  height: 700.1px;
+  width: 70%;
+  height: 60%;
   top: 50%;
   left: 55%;
   transform: translate(-50%, -50%) matrix(1, 0, 0.02, 1, 0, 0);
