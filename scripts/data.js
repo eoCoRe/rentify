@@ -25,12 +25,12 @@ const _advertisements = [
   },
   {
     id: 2,
-    imgRoute: '../assets/imgs/house-2.png',
-    title: 'Jardim das Flores, cidade de São Miguel',
+    imgRoute: '../assets/imgs/house-2.png' ,
+    title: 'Jardim das Flores, cidade de São Miguel' ,
     description: '2 quartos e 1 banheiro, não permitido animais de estimação',
     capacity: '2 pessoas',
     price: '1.200,00',
-    favorite: false,
+    favorite: true,
     toString() {
       return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase()
     },
@@ -42,7 +42,7 @@ const _advertisements = [
     description: '3 quartos e 2 banheiros, permitido animais de estimação',
     capacity: '5 pessoas',
     price: '4.800,00',
-    favorite: false,
+    favorite: true,
     toString() {
       return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase()
     },
@@ -56,4 +56,11 @@ export function setFavorite(id, favoriteVal) {
   const ad = _advertisements[index]
   if (!ad) return
   ad.favorite = favoriteVal
+}
+
+export function favoritos(){
+var favoritos = _advertisements.filter(function(anuncio){
+  return anuncio.favorite == true
+})
+return favoritos
 }
