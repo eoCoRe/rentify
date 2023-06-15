@@ -303,3 +303,67 @@ font-weight: 400;
   left: 40px;
 
 }
+
+.retangulo- {
+  justify-content: space-between;
+  position: absolute;
+  width: 50%;
+  height: 30%;
+  top: 35%;
+  left: 55%;
+  transform: translate(-50%, -50%) matrix(1, 0, 0.02, 1, 0, 0);
+  background: #FEFEFF;
+  box-shadow: 0px 98.8896px 79.1117px rgba(41, 72, 152, 0.05), 0px 64.0951px 46.3316px rgba(41, 72, 152, 0.037963), 0px 38.0908px 25.1985px rgba(41, 72, 152, 0.0303704), 0px 19.7779px 12.8556px rgba(41, 72, 152, 0.025), 0px 8.05767px 6.44614px rgba(41, 72, 152, 0.0196296), 0px 1.83129px 3.11319px rgba(41, 72, 152, 0.012037);
+  border-radius: 9.88896px;}
+
+  .retangulo- p{
+    position: absolute;
+    font-weight: 500;
+    width: 15%;
+    height:10%;
+    font-size: 16px;
+    margin-top: 20px;
+    left: 5%;
+     }
+
+     .retangulo- h1{
+      position: absolute;
+      font-weight: 500;
+      width: 30%;
+      height:10%;
+      font-size: 16px;
+      margin-top: 20px;
+      top: 30%;
+      left: 35%;
+       }
+       .retangulo- hr{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 60%;
+        border: 1px solid #F3F5F8;
+        transform: rotate(-0.2deg);
+       }
+       .adicionar-imovel-btn- {
+        position: absolute;
+        font-family: 'Roboto';
+        font-style: normal;
+        bottom: 20px;
+        right: 45%;
+        padding: 10px;
+        background: #F97316;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        letter-spacing: 0.25px;
+       }
+
+       .img-{
+        position: absolute;
+        width: 20%;
+        height: 20%;
+        top: 35%;
+        left: 10%;
+        
+       }
