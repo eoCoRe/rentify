@@ -116,4 +116,19 @@
 a{
     text-decoration: none;
 }
+.hidden{
+   
+    display: none;
 
+}
+.aviso{
+    color: #EF4444;
+    font-size: 70%;
+    margin-left: 1%;
+}
+
+.disable{
+    pointer-events: none;
+  color: gray;
+  text-decoration: none;
+}
