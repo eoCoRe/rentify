@@ -12,45 +12,48 @@ function exibirFavoritos() {
 
   favoritos().forEach(anuncio => {
     const card = createCard(anuncio);
-    cardsSection.appendChild(card);
+    cardsSection.innerHTML += card;
   });
-}
 
-function createCard(anuncio) {
-  const card = document.createElement('div');
-  card.classList.add('card');
-
-  const img = document.createElement('img');
-  img.src = anuncio.imgRoute;
-  img.alt = anuncio.title;
-  card.appendChild(img);
-
-  const title = document.createElement('h3');
-  title.textContent = anuncio.title;
-  card.appendChild(title);
-
-  const description = document.createElement('p');
-  description.textContent = anuncio.description;
-  card.appendChild(description);
-
-  const capacity = document.createElement('p');
-  capacity.textContent = `Capacidade: ${anuncio.capacity}`;
-  card.appendChild(capacity);
-
-  const price = document.createElement('p');
-  price.textContent = `Preço: R$ ${anuncio.price}`;
-  card.appendChild(price);
-
-  const favoriteButton = document.createElement('button');
-  favoriteButton.classList.add('favorite-button');
-  favoriteButton.textContent = 'Remover dos favoritos';
+  bindFavoriteIcons();
+  const favoriteButton = card.querySelector('.card__favorite');
   favoriteButton.addEventListener('click', () => {
     setFavorite(anuncio.id, false);
     exibirFavoritos();
   });
-  card.appendChild(favoriteButton);
+}
 
-  return card;
+function bindFavoriteIcons() {
+  const favoriteIcons = document.querySelectorAll('.card__favorite');
+  favoriteIcons.forEach(icon => {
+    icon.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleFavoriteState(icon);
+    });
+  });
+}
+function createCard(anuncio) {
+  return `
+  <a class="card" href="../pages/imovel.html">
+    <img src="${anuncio.imgRoute}" alt="${anuncio.title}">
+    <div class="card__content">
+      <h3 class="card__title">${anuncio.title}</h3>
+        <div class="card__capacity">
+        <img src="../assets/icons/users.svg" />
+        <span>${anuncio.capacity}</span>
+      </div>
+      <p>${anuncio.description}</p>
+      <strong class="card__price">R$ ${anuncio.price}/mês</strong>
+    </div>
+    <img class="card__favorite" id="${anuncio.id}" src="../assets/icons/heart.svg" />
+  </a>
+  `;
+}
+
+function toggleFavoriteState(element) {
+  element.classList.toggle('active');
+  var favoriteVal = element.classList.contains('active');
+  setFavorite(element.id, favoriteVal);
 }
 
 document.addEventListener('DOMContentLoaded', exibirFavoritos);
