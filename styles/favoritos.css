@@ -1,67 +1,72 @@
 .home {
-    display: flex;
-    height: 100%;
-  }
-  
-  .cards {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    padding: 2.5rem;
-    gap: 2rem;
-  }
-  
-  .card {
-    color: var(--color-primary);
-    text-decoration: none;
-    cursor: pointer;
-    background-color: var(--card-background);
-    width: 75%;
-    display: flex;
-    padding: 2.25rem 2rem;
-    gap: 1rem;
-    border-radius: 0.5rem;
-    position: relative;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    font-weight: 500;
-    transition: all ease-out 0.2s;
-  }
-  
-  .card:hover {
-    transform: scale(1.025);
-  }
-  
-  .card__content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 0 2rem;
-  }
-  
-  .card__title {
-    font-weight: 500;
-  }
-  
-  .card__capacity {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .card__favorite {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 16px;
-  }
-  
-  .card__favorite.active {
-    filter: invert(55%) sepia(55%) saturate(2800%) hue-rotate(346deg) brightness(104%) contrast(97%);
-  }
-  
-  .card__price {
-    font-weight: 500;
-    font-size: 1.2rem;
-  }
+  display: flex;
+  height: 100%;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 2.5rem;
+  gap: 2rem;
+}
+
+.card {
+  color: var(--color-primary);
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--card-background);
+  width: 75%;
+  display: flex;
+  padding: 2.25rem 2rem;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  font-weight: 500;
+  transition: all ease-out 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.025);
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 2rem;
+}
+
+.card__title {
+  font-weight: 500;
+}
+
+.card__capacity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card__favorite {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 16px;
+}
+
+.card__favorite.active {
+  filter: invert(55%) sepia(55%) saturate(2800%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+.card__price {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.favorite-button{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
