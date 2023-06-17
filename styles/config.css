@@ -1,0 +1,134 @@
+.config-main{
+    display: flex;
+    height: 100%;
+    background-color: #f3f5f8;
+}
+.blocao{
+    margin-top: 2%;
+    margin-left: 4%;
+    width: 80%;
+    height: 70%;
+    background-color: white;
+    border-radius: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-perfil{
+    width: 100%;
+    display: flex;
+    height: 20%;
+    align-items: center;
+    margin-left: 3%;
+    height: 110px;
+}
+
+.blocao .header-perfil img{
+    width: 4%;
+    height: 40%;
+}
+.blocao .header-perfil p {
+    margin-left: 1%;
+}
+
+.container-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.linha{
+    border-top: 1px solid #f6f6f6;
+    margin: 10px auto;
+    width: 40%;
+    width: 100%;
+    margin-top: -15px;
+}
+.mid{
+    display: flex;
+    flex-direction: column;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.personal-info{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+.personal-info p{
+    margin-bottom: 2%;
+}
+.digite {
+    border: none;
+    outline: none;
+    border-bottom: solid #f6f6f6;
+    width: 325px;
+}
+.botoes{
+    margin-top: 8%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+}
+.save{
+    margin-left: 4%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.savep{
+    border: 1px solid   #F97316;
+    background-color:   #F97316;
+    color: white;
+    width: 140px;
+    text-align: center;
+    padding: 5px;
+
+}
+.delete{
+    margin-right: 4%;
+}
+.deletep{
+    border: 1px solid   #EF4444;
+    background-color:   #EF4444;
+    color: white;
+    width: 140px;
+    text-align: center;
+    padding: 5px;
+    
+}
+.descart{
+    border: 1px solid   #F97316;
+    background-color:   #F97316;
+    color: white;
+    width: 190px;
+    text-align: center;
+    padding: 5px;
+    margin-left: 10px;
+}
+a{
+    text-decoration: none;
+}
+.hidden{
+   
+    display: none;
+
+}
+.aviso{
+    color: #EF4444;
+    font-size: 70%;
+    margin-left: 1%;
+}
+
+.disable{
+    pointer-events: none;
+  color: gray;
+  text-decoration: none;
+}

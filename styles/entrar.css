@@ -3,13 +3,13 @@
     font-family: "Josefin Sans", sans-serif;
 }
 body{
-    background-color: rgb(245, 245, 245);
+    background-color: #F3F5F8;
 }
 
 .corpo{
     border-radius: 5px;
-    width: 90%;
-    height: 90%;
+    width: 70%;
+    height: 70%;
     background-color: white;
     position: absolute;
     top: 50%;
@@ -116,7 +116,7 @@ body{
 
 .registrar p{
     border: 1px solid rgb(219, 120, 21);
-    background-color: rgb(241, 123, 5);
+    background-color:#f97316;
     color: white;
     width: 100%;
     height: 100%;
