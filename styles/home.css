@@ -77,7 +77,6 @@
   font-size: 1.2rem;
 }
 
-
 @media (max-width: 1150px) {
   .card {
     flex-direction: column;

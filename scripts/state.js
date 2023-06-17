@@ -1,3 +1,6 @@
+
+const advertisementsKey = "ADVERTISEMENTSKEY"
+
 const _advertisements = [
   {
     id: 1,
@@ -30,7 +33,7 @@ const _advertisements = [
     description: '2 quartos e 1 banheiro, não permitido animais de estimação',
     capacity: '2 pessoas',
     price: '1.200,00',
-    favorite: true,
+    favorite: false,
     toString() {
       return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase()
     },
@@ -42,25 +45,41 @@ const _advertisements = [
     description: '3 quartos e 2 banheiros, permitido animais de estimação',
     capacity: '5 pessoas',
     price: '4.800,00',
-    favorite: true,
+    favorite: false,
     toString() {
       return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase()
     },
   },
 ]
 
-export let advertisements = Array.from(_advertisements)
+setInitialDataIfNeeded()
+
+function setAdvertisementsInLocalStorage(updatedAdvertisements) {
+  localStorage.setItem(advertisementsKey, JSON.stringify(updatedAdvertisements))
+}
+
+function getAdvertisementsFromLocalStorage() {
+  const advertisements = localStorage.getItem(advertisementsKey)
+  if (!advertisements) return []
+  return JSON.parse(advertisements)
+}
+
+function setInitialDataIfNeeded() {
+  if (!localStorage[advertisementsKey]) localStorage.setItem(advertisementsKey, JSON.stringify(_advertisements))
+}
+
+export let advertisements = Array.from(getAdvertisementsFromLocalStorage())
 
 export function setFavorite(id, favoriteVal) {
-  const index = _advertisements.findIndex((ad) => ad.id == id)
-  const ad = _advertisements[index]
+  if (!id) return
+  const advertisements = getAdvertisementsFromLocalStorage()
+  const index = advertisements.findIndex((ad) => ad.id == id)
+  const ad = advertisements[index]
   if (!ad) return
   ad.favorite = favoriteVal
+  setAdvertisementsInLocalStorage(advertisements)
 }
 
 export function favoritos(){
-var favoritos = _advertisements.filter(function(anuncio){
-  return anuncio.favorite == true
-})
-return favoritos
+  return getAdvertisementsFromLocalStorage().filter(anuncio => anuncio.favorite == true)
 }

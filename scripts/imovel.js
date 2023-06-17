@@ -20,4 +20,4 @@ imgSmContainers.forEach((container) => {
 })
 
 const currentFocusImg = advertisements[0].currentFocusImg
-// updateFocusedImage(`../assets/imgs/imovel/${currentFocusImg}`)
+updateFocusedImage(`../assets/imgs/imovel/${currentFocusImg}`)

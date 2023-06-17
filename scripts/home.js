@@ -1,5 +1,5 @@
 import { getHeaderFilter } from './filter.js';
-import { advertisements, setFavorite } from './data.js';
+import { advertisements, setFavorite } from './state.js';
 
 let _previousFilterText = '';
 
@@ -44,20 +44,24 @@ function createCardHtml(ad) {
   return `
     <a class="card" href="../pages/imovel.html">
       <div class="card__cover">
-      <img src="${ad.imgRoute}" />
+      <img src="${ ad.imgRoute }" />
       </div>
       <div class="card__content">
-        <h3 class="card__title">${ad.title}</h3>
+        <h3 class="card__title">${ ad.title }</h3>
         <div class="card__capacity">
           <img src="../assets/icons/users.svg" />
-          <span>${ad.capacity}</span>
+          <span>${ ad.capacity }</span>
         </div>
-        <p>${ad.description}</p>
-        <strong class="card__price">R$ ${ad.price}/mês</strong>
+        <p>${ ad.description }</p>
+        <strong class="card__price">R$ ${ ad.price }/mês</strong>
       </div>
-      <img class="card__favorite" id="${ad.id}" src="../assets/icons/heart.svg" />
+      <img class="card__favorite ${ initialActiveStateClass(ad) }" id="${ ad.id }" src="../assets/icons/heart.svg" />
     </a>
   `;
+}
+
+function initialActiveStateClass(ad) {
+  return id.favorite ? 'active': ''
 }
 
 function toggleFavoriteState(element) {
