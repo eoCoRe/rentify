@@ -47,7 +47,7 @@ function createCardHtml(ad) {
       <img src="${ ad.imgRoute }" />
       </div>
       <div class="card__content">
-        <h3 class="card__title">${ ad.title }</h3>
+        <h3 class="card__title">${ ad.title }</h3> 
         <div class="card__capacity">
           <img src="../assets/icons/users.svg" />
           <span>${ ad.capacity }</span>
@@ -61,7 +61,7 @@ function createCardHtml(ad) {
 }
 
 function initialActiveStateClass(ad) {
-  return id.favorite ? 'active': ''
+  return ad.favorite ? 'active': ''
 }
 
 function toggleFavoriteState(element) {
