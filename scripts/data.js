@@ -2,7 +2,7 @@ const _advertisements = [
   {
     id: 1,
     ImgFolder: '../assets/imgs/imovel/',
-    imgRoute: '../assets/imgs/house-1.png',
+    imgRoute: '../assets/imgs/imovel/imovel-01-01.jpg',
     title: 'Jardins da Cidade, na cidade de Nova Esperança',
     description: '2 quartos e 2 banheiros, permitido animais de estimação',
     fullDescription: 'O bairro Jardins da Cidade é um dos mais valorizados da cidade de Nova Esperança, oferecendo aos seus moradores uma infraestrutura completa e acessível. Você estará a poucos minutos de distância de escolas, hospitais, restaurantes, parques e diversas opções de comércio e lazer.',

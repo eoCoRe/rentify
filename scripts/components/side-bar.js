@@ -16,10 +16,13 @@ class Nav extends HTMLElement {
           border-left: 1px solid var(--color-border);
           height: 100vh;
           width: 12.5vw;
+          min-width: 120px;
           background-color: var(--side-menu-background);
         }
         
         .side-menu__actions {
+          padding: 10px;
+          text-align: center;
           padding-top: 1rem;
           height: 90%;
           display: flex;

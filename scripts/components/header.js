@@ -108,6 +108,19 @@ class Header extends HTMLElement {
         .dropdown.open .btn-profile {
           background-color: #F97316;
         }
+
+        @media (max-width: 705px) {
+          .header__search {
+            width: 40%;
+          }
+        }
+
+        @media (max-width: 575px) {
+          .search__input,
+          .header__search{
+            display: none;
+          }
+        }
       </style>
 
       <header class="header">

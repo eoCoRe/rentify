@@ -43,7 +43,9 @@ function filterAdvertisements(filter) {
 function createCardHtml(ad) {
   return `
     <a class="card" href="../pages/imovel.html">
+      <div class="card__cover">
       <img src="${ad.imgRoute}" />
+      </div>
       <div class="card__content">
         <h3 class="card__title">${ad.title}</h3>
         <div class="card__capacity">
