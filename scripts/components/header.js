@@ -131,10 +131,13 @@ class Header extends HTMLElement {
             <button class="btn__icon btn-profile active">
               <img src="../assets/imgs/profile-picture.png"/>
             </button>
+            <a href="../pages/config.html">
             <button class="dropdown__content profile__content">
               Configurações
               <img src="../assets/icons/setting.svg"/>
+              
             </button>
+            </a>
           </div>
         </div>
       </header>
