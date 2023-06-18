@@ -4,7 +4,6 @@ const advertisementsKey = "ADVERTISEMENTSKEY"
 const _advertisements = [
   {
     id: 1,
-    ImgFolder: '../assets/imgs/imovel/',
     imgRoute: '../assets/imgs/imovel/imovel-01-01.jpg',
     title: 'Jardins da Cidade, na cidade de Nova Esperança',
     description: '2 quartos e 2 banheiros, permitido animais de estimação',
@@ -28,7 +27,7 @@ const _advertisements = [
   },
   {
     id: 2,
-    imgRoute: '../assets/imgs/house-2.png' ,
+    imgRoute: '../assets/imgs/imovel-02.jpg',
     title: 'Jardim das Flores, cidade de São Miguel' ,
     description: '2 quartos e 1 banheiro, não permitido animais de estimação',
     capacity: '2 pessoas',
@@ -40,7 +39,7 @@ const _advertisements = [
   },
   {
     id: 3,
-    imgRoute: '../assets/imgs/house-3.png',
+    imgRoute: '../assets/imgs/imovel-03.jpg',
     title: 'Vila dos Pinheiros, cidade de Pinheiro',
     description: '3 quartos e 2 banheiros, permitido animais de estimação',
     capacity: '5 pessoas',

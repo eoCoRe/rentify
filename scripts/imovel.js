@@ -1,4 +1,4 @@
-import { advertisements } from './data.js'
+import { advertisements } from './state.js'
 
 const cardImgContainer = document.querySelector('.card-img-lg')
 const imgSmContainers = document.querySelectorAll('.img-sm')

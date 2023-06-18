@@ -127,7 +127,7 @@ class Header extends HTMLElement {
         <img class="header__logo" src="../assets/imgs/logo.png">
         ${this.searchEnabled() ? this.renderSearchInput() : ''}
         <div class="header__actions">
-          <button class="btn__icon">
+          <button class="btn__icon btn-question">
             <img src="../assets/icons/question.svg"/>
           </button>
           <div class="dropdown dropdown-notification">
@@ -166,6 +166,7 @@ class Header extends HTMLElement {
     this.bindSearchInput()
     this.bindNotificationButton()
     this.bindProfileButton()
+    this.bindQuestionButton()
   }
 
   bindSearchInput() {
@@ -192,6 +193,15 @@ class Header extends HTMLElement {
     )
   }
 
+  bindQuestionButton() {
+    const questionButton = this.getQuestionButton();
+    if (!questionButton) return;
+    questionButton.addEventListener(
+      'click',
+      this.handleQuestionButtonClick.bind(this)
+    );
+  }
+
   getNotificationButton() {
     return this.querySelector('.btn-notification')
   }
@@ -204,6 +214,10 @@ class Header extends HTMLElement {
     return this.querySelector('.search__input')
   }
 
+  getQuestionButton() {
+    return this.querySelector('.btn-question');
+  }
+
   handleNotificationButtonClick() {
     const notificationDropdown = this.getNotificationDropdown()
     notificationDropdown.classList.toggle('open')
@@ -212,6 +226,10 @@ class Header extends HTMLElement {
   handleProfileButtonClick() {
     const profileDropdown = this.getProfileDropdown()
     profileDropdown.classList.toggle('open')
+  }
+
+  handleQuestionButtonClick() {
+    window.location.href = '../../pages/sobre.html';
   }
 
   getNotificationDropdown() {
