@@ -76,7 +76,7 @@ class Nav extends HTMLElement {
             </a>
           </li>
           <li class="side-menu__action side-menu__action-exit">
-            <a href="../pages/entrar.html">
+            <a href="../pages/index.html">
               Sair
               <img src="../assets/icons/arrow-left.svg"/>
             </a>
