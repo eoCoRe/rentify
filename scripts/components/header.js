@@ -108,13 +108,26 @@ class Header extends HTMLElement {
         .dropdown.open .btn-profile {
           background-color: #F97316;
         }
+
+        @media (max-width: 705px) {
+          .header__search {
+            width: 40%;
+          }
+        }
+
+        @media (max-width: 575px) {
+          .search__input,
+          .header__search{
+            display: none;
+          }
+        }
       </style>
 
       <header class="header">
         <img class="header__logo" src="../assets/imgs/logo.png">
         ${this.searchEnabled() ? this.renderSearchInput() : ''}
         <div class="header__actions">
-          <button class="btn__icon">
+          <button class="btn__icon btn-question">
             <img src="../assets/icons/question.svg"/>
           </button>
           <div class="dropdown dropdown-notification">
@@ -131,10 +144,13 @@ class Header extends HTMLElement {
             <button class="btn__icon btn-profile active">
               <img src="../assets/imgs/profile-picture.png"/>
             </button>
+            <a href="../pages/config.html">
             <button class="dropdown__content profile__content">
               Configurações
               <img src="../assets/icons/setting.svg"/>
+              
             </button>
+            </a>
           </div>
         </div>
       </header>
@@ -153,6 +169,7 @@ class Header extends HTMLElement {
     this.bindSearchInput()
     this.bindNotificationButton()
     this.bindProfileButton()
+    this.bindQuestionButton()
   }
 
   bindSearchInput() {
@@ -179,6 +196,15 @@ class Header extends HTMLElement {
     )
   }
 
+  bindQuestionButton() {
+    const questionButton = this.getQuestionButton();
+    if (!questionButton) return;
+    questionButton.addEventListener(
+      'click',
+      this.handleQuestionButtonClick.bind(this)
+    );
+  }
+
   getNotificationButton() {
     return this.querySelector('.btn-notification')
   }
@@ -191,6 +217,10 @@ class Header extends HTMLElement {
     return this.querySelector('.search__input')
   }
 
+  getQuestionButton() {
+    return this.querySelector('.btn-question');
+  }
+
   handleNotificationButtonClick() {
     const notificationDropdown = this.getNotificationDropdown()
     notificationDropdown.classList.toggle('open')
@@ -199,6 +229,10 @@ class Header extends HTMLElement {
   handleProfileButtonClick() {
     const profileDropdown = this.getProfileDropdown()
     profileDropdown.classList.toggle('open')
+  }
+
+  handleQuestionButtonClick() {
+    window.location.href = '../../pages/sobre.html';
   }
 
   getNotificationDropdown() {

@@ -1,56 +1,46 @@
-import { favoritos, setFavorite } from './data.js';
+import { favoritos, setFavorite } from './state.js';
 
-const cardsSection = document.querySelector('.cards');
+document.addEventListener('DOMContentLoaded', exibirFavoritos);
 
 function exibirFavoritos() {
-  cardsSection.innerHTML = '';
+const cardsSection = document.querySelector('.cards');
+cardsSection.innerHTML = '';
 
-  if (favoritos().length === 0) {
-    cardsSection.innerHTML = '<p>Nenhum anúncio favorito encontrado.</p>';
-    return;
-  }
+if (favoritos().length === 0) {
+  cardsSection.innerHTML = '<p>Nenhum anúncio favorito encontrado.</p>';
+  return;
+}
 
   favoritos().forEach(anuncio => {
     const card = createCard(anuncio);
-    cardsSection.appendChild(card);
+    cardsSection.innerHTML += card;
   });
+  
+  const favoriteButtons = cardsSection.querySelectorAll('.card__favorite'); 
+
+  favoriteButtons.forEach(favoriteButton => favoriteButton.addEventListener('click', (anuncio) => {
+    anuncio.preventDefault();
+    setFavorite(anuncio.target.id, false);
+    exibirFavoritos();
+  }))
 }
 
 function createCard(anuncio) {
-  const card = document.createElement('div');
-  card.classList.add('card');
-
-  const img = document.createElement('img');
-  img.src = anuncio.imgRoute;
-  img.alt = anuncio.title;
-  card.appendChild(img);
-
-  const title = document.createElement('h3');
-  title.textContent = anuncio.title;
-  card.appendChild(title);
-
-  const description = document.createElement('p');
-  description.textContent = anuncio.description;
-  card.appendChild(description);
-
-  const capacity = document.createElement('p');
-  capacity.textContent = `Capacidade: ${anuncio.capacity}`;
-  card.appendChild(capacity);
-
-  const price = document.createElement('p');
-  price.textContent = `Preço: R$ ${anuncio.price}`;
-  card.appendChild(price);
-
-  const favoriteButton = document.createElement('button');
-  favoriteButton.classList.add('favorite-button');
-  favoriteButton.textContent = 'Remover dos favoritos';
-  favoriteButton.addEventListener('click', () => {
-    setFavorite(anuncio.id, false);
-    exibirFavoritos();
-  });
-  card.appendChild(favoriteButton);
-
-  return card;
+  return `
+  <a class="card" href="../pages/imovel.html">
+    <div class="card__cover">
+      <img src="${anuncio.imgRoute}" alt="${anuncio.title}" />
+    </div>
+    <div class="card__content">
+      <h3 class="card__title">${anuncio.title}</h3>
+        <div class="card__capacity">
+        <img src="../assets/icons/users.svg" />
+        <span>${anuncio.capacity}</span>
+      </div>
+      <p>${anuncio.description}</p>
+      <strong class="card__price">R$ ${anuncio.price}/mês</strong>
+    </div>
+    <img class="card__favorite active" id="${anuncio.id}" src="../assets/icons/heart.svg" />
+  </a>
+  `;
 }
-
-document.addEventListener('DOMContentLoaded', exibirFavoritos);
