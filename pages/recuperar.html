@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rentify</title>
+    <link rel="stylesheet" href="../styles/recuperar.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../scripts/button.js"></script>
+  </head>
+  <body>
+    <div class="recuperar-container">
+      <form class="form" action="">
+        <div class="card">
+          <div class="card-top">
+            <img class="img-login" src="../assets/imgs/logo-md.png" alt="" />
+            <h1 class="titulo">Recuperar senha</h1>
+            <p>Digite seu Email ou Usuário</p>
+            <div class="line"></div>
+            <div class="campo-email">
+              <label for="email-usuario">Email/Usuário:</label>
+              <div class="input-container">
+                <input
+                  type="text"
+                  id="email-usuario"
+                  name="email-usuario"
+                  placeholder="name@example.com"
+                  onkeydown="verificarTecla(event)"
+                />
+                <div class="icone-container">
+                  <img
+                    src="../assets/imgs/icone.png"
+                    alt="icone"
+                    class="icone"
+                  />
+                </div>
+              </div>
+              <div class="line2"></div>
+            </div>
+
+            <div class="line-between"></div>
+            <div class="campo-confirmar">
+              <button type="button" onclick="validarCampoEmail()">
+                Confirmar
+              </button>
+            </div>
+
+            <div class="campo-voltar">
+              <a href="./index.html">
+                <button type="button">Voltar</button>
+              </a>
+        </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

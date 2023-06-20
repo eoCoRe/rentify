@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/variables.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/home.css" />
+    <script type="module" src="../scripts/index.js"></script>
+    <link rel="stylesheet" href="../styles/config.css">
+    <script src="../scripts/config.js"></script>
+    <title>Rentify - Configuração</title>
+</head>
+
+<body>
+    <header-component search="false"></header-component>
+    <main class="config-main">
+        <side-bar-component></side-bar-component>
+        <div class="blocao">
+            <div class="container-header">
+                <div class="header-perfil">
+                    <img src="../assets/icons/setting.svg" alt="">
+                    <p>Configurações</p>
+                </div>
+                <hr class="linha">
+            </div>
+            <div class="mid">
+                <div class="info">
+                    <div class="personal-info">
+                        <p>Nome</p>
+                        <input type="text" placeholder="  Seu nome" class="digite" id="full-name">
+                        <div class="hidden" id="aviso-nome"><p class="aviso">nome obrigatório</p></div>
+                    </div>
+                    <div class="personal-info">
+                        <p>Email</p>
+                        <input type="text" placeholder="  SeuEmail@Exemplo.com" class="digite" id="email">
+                        <div class="hidden" id="aviso-email"><p class="aviso">email obrigatorio</p></div>
+                    </div>
+                    <div class="personal-info">
+                        <p>Telefone</p>
+                        <input type="text" placeholder="  (99) 9 9999-9999" class="digite" id="telefone">
+                        <div class="hidden" id="aviso-telefone"><p class="aviso">telefone obrigatorio</p></div>
+                    </div>
+                    <div class="personal-info">
+                        <p>Usuário</p>
+                        <input type="text" placeholder="  Nome de Usuário" class="digite" id="usuario">
+                        <div class="hidden" id="aviso-usuario"><p class="aviso">usuário obrigatorio</p></div>
+                    </div>
+                    <div class="personal-info">
+                        <p>Senha</p>
+                        <input type="password" placeholder="  ************" class="digite" id="senha">
+                        <div class="hidden" id="aviso-senha"><p class="aviso">senha obrigatoria</p></div>
+                    </div>
+                </div>
+            </div>
+            
+
+               
+            <div class="save">
+                <div class="botoes"> 
+                    <a href="home.html"  class="disable" id="salvando">
+                        <p class="savep" id="jorge">Salvar</p>
+                    </a>
+                    <a href="home.html"><p class="descart">Descartar Alterações</p></a>
+                    <div class="delete">
+                        <a href="index.html">
+                            <p class="deletep">Deletar Conta</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+                
+        </div>
+    </main>
+</body>
+
+</html>
