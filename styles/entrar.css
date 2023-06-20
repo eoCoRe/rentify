@@ -110,4 +110,9 @@ a{
 }
 .link{
     color: #F97316;
+    text-align: center;
+}
+.img-login{
+   display: flex;
+   justify-content: space-between;
 }

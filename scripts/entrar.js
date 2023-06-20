@@ -21,6 +21,6 @@ const entrarLink = document.getElementById("entrarLink");
 // Adiciona um evento de clique ao link
 entrarLink.addEventListener("click", function() {
   // Redireciona para a página "home.html"
-  window.location.href = "home.html";
+  window.location.href = "../pages/home.html";
 });
 });
