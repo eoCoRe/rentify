@@ -12,9 +12,6 @@ const _advertisements = [
     
     price: '2.800,00',
     favorite: false,
-    toString() {
-      return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase()
-    },
     currentFocusImg: 'imovel-01-01.jpg',
     images: [
       'imovel-01-01.jpg',
@@ -33,9 +30,6 @@ const _advertisements = [
     capacity: '2 pessoas',
     price: '1.200,00',
     favorite: false,
-    toString() {
-      return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase()
-    },
   },
   {
     id: 3,
@@ -45,9 +39,6 @@ const _advertisements = [
     capacity: '5 pessoas',
     price: '4.800,00',
     favorite: false,
-    toString() {
-      return `${this.imgRoute}${this.title}${this.description}${this.capacity}${this.price}`.toLowerCase()
-    },
   },
 ]
 
@@ -67,7 +58,9 @@ function setInitialDataIfNeeded() {
   if (!localStorage[advertisementsKey]) localStorage.setItem(advertisementsKey, JSON.stringify(_advertisements))
 }
 
-export let advertisements = Array.from(getAdvertisementsFromLocalStorage())
+export function advertisements() {
+  return Array.from(getAdvertisementsFromLocalStorage())
+}
 
 export function setFavorite(id, favoriteVal) {
   if (!id) return

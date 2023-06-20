@@ -3,7 +3,6 @@ import { advertisements, setFavorite } from './state.js';
 
 let _previousFilterText = '';
 
-
 setInterval(() => {
   buildAdvertisementsIfNeeded();
 }, 250);
@@ -34,10 +33,15 @@ function bindFavoriteIcons() {
 }
 
 function filterAdvertisements(filter) {
-  if (filter == null) return advertisements;
-  return advertisements.filter(advertisement =>
-    advertisement.toString().includes(filter.toLowerCase())
+  if (filter == null) return advertisements();
+  return advertisements().filter(advertisement =>
+    advertisementToString(advertisement).includes(filter.toLowerCase())
   );
+}
+
+function advertisementToString(ad) 
+{
+  return `${ad.imgRoute}${ad.title}${ad.description}${ad.capacity}${ad.price}`.toLowerCase()
 }
 
 function createCardHtml(ad) {
