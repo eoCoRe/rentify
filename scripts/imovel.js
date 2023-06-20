@@ -19,5 +19,5 @@ imgSmContainers.forEach((container) => {
   container.addEventListener('click', handleImageClick)
 })
 
-const currentFocusImg = advertisements[0].currentFocusImg
+const currentFocusImg = advertisements()[0].currentFocusImg
 updateFocusedImage(`../assets/imgs/imovel/${currentFocusImg}`)
