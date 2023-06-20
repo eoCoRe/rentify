@@ -7,6 +7,7 @@
     <title>Registrar</title>
     <link rel="stylesheet" href="../styles/registrar.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="../scripts/registrar.js"></script>
 </head>
 
 <body>
@@ -25,20 +26,23 @@
             <div class="input-regiao">
                 <div class="interno">
                     <p>Email</p>
-                    <input type="text" placeholder="Email do Usuário">
+                    <input type="text" placeholder="Email do Usuário" id="email">
                     <hr class="linha">
+                    <div class="hidden"  id="aviso-email"><p class="aviso">email obrigatório</p></div>
                 </div>
 
                 <div class="interno">
                     <p>Usuário</p>
-                    <input type="text" placeholder="Nome de Usuário">
+                    <input type="text" placeholder="Nome de Usuário" id="usuario">
                     <hr class="linha">
+                    <div class="hidden" id="aviso-usuario"><p class="aviso" >usuario obrigatória</p></div>
                 </div>
 
                 <div class="interno">
                     <p>Senha</p>
-                    <input type="password" placeholder="********">
+                    <input type="password" placeholder="********" id="senha">
                     <hr class="linha">
+                    <div id="aviso-senha" class="hidden"><p class="aviso">senha obrigatória</p></div>
                 </div>
 
             </div>

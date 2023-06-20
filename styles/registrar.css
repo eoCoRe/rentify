@@ -129,3 +129,11 @@ a{
 .link{
     color: #F97316;
 }
+.aviso{
+    color: #EF4444;
+    font-size: 15px !important;
+    margin-left: 1%;
+}
+.hidden{
+    display: none;
+}
